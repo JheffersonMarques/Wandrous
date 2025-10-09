@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "wandrous:tealestite_shard"
+    }
+  ],
+  "result": {
+    "components": {
+      "modonomicon:book_id": "wandrous:wandrous"
+    },
+    "count": 1,
+    "id": "modonomicon:modonomicon"
+  }
+}

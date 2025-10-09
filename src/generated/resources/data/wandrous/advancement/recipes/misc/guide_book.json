@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_tealestite_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wandrous:tealestite_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wandrous:guide_book"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tealestite_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wandrous:guide_book"
+    ]
+  }
+}
