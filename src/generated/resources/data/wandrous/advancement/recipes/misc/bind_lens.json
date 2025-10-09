@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:vitality_lens"
+        "recipe": "wandrous:bind_lens"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:vitality_lens"
+      "wandrous:bind_lens"
     ]
   }
 }

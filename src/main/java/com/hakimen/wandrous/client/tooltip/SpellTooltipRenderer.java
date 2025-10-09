@@ -14,7 +14,7 @@ import org.joml.Matrix4f;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpellTooltipRenderer implements ClientTooltipComponent {
+public class    SpellTooltipRenderer implements ClientTooltipComponent {
 
     private final SpellTooltipComponent comp;
 

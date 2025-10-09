@@ -1,0 +1,41 @@
+{
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "category": "getting_started",
+  "description": "book.wandrous.wandrous.getting_started.wands.description",
+  "hide_while_locked": false,
+  "icon": {
+    "item": "wandrous:wand"
+  },
+  "name": "book.wandrous.wandrous.getting_started.wands.name",
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "item": {
+        "count": 1,
+        "item": "wandrous:wand"
+      },
+      "text": "book.wandrous.wandrous.getting_started.wands.page1.text",
+      "title": "book.wandrous.wandrous.getting_started.wands.page1.title"
+    },
+    {
+      "type": "modonomicon:text",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "show_title_separator": true,
+      "text": "book.wandrous.wandrous.getting_started.wands.page2.text",
+      "title": "book.wandrous.wandrous.getting_started.wands.page2.title",
+      "use_markdown_in_title": false
+    }
+  ],
+  "show_when_any_parent_unlocked": false,
+  "sort_number": 1,
+  "x": -6,
+  "y": 0
+}

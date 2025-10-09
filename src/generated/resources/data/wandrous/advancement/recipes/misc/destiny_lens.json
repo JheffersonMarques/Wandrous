@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_tealestite_shard": {
+    "has_glass_pane": {
       "conditions": {
         "items": [
           {
-            "items": "wandrous:tealestite_shard"
+            "items": "#c:glass_panes"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:recharge_crystal"
+        "recipe": "wandrous:destiny_lens"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_tealestite_shard"
+      "has_glass_pane"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:recharge_crystal"
+      "wandrous:destiny_lens"
     ]
   }
 }

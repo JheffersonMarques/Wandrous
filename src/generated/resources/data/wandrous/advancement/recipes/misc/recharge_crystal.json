@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:arcane_dispenser"
+        "recipe": "wandrous:recharge_crystal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:arcane_dispenser"
+      "wandrous:recharge_crystal"
     ]
   }
 }

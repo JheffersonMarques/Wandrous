@@ -21,6 +21,8 @@ public class Wandrous
         container.registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);
         container.registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC);
 
+
+
         Registration.register(container.getEventBus());
     }
 }

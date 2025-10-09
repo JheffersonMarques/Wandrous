@@ -29,25 +29,25 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ArcaneInscriberBlockEntity extends BlockEntity implements BlockEntityTicker<ArcaneInscriberBlockEntity> {
 
     List<BlockPos> offsets = List.of(
-            new BlockPos(0, -1, -3),
-            new BlockPos(-3, -1, 0),
+            new BlockPos(0, -1,-3),
+            new BlockPos(-3, -1,0),
             new BlockPos(3, -1, 0),
             new BlockPos(0, -1, 3),
 
             new BlockPos(-2, -1, -2),
-            new BlockPos(-2, -1, 2),
-            new BlockPos(2, -1, 2),
-            new BlockPos(2, -1, -2),
+            new BlockPos(-2, -1,  2),
+            new BlockPos(2, -1,   2),
+            new BlockPos(2, -1,  -2),
 
             new BlockPos(0, -1, -6),
             new BlockPos(-6, -1, 0),
-            new BlockPos(6, -1, 0),
-            new BlockPos(0, -1, 6),
+            new BlockPos(6, -1,  0),
+            new BlockPos(0, -1,  6),
 
             new BlockPos(-4, -1, -4),
-            new BlockPos(-4, -1, 4),
-            new BlockPos(4, -1, 4),
-            new BlockPos(4, -1, -4)
+            new BlockPos(-4, -1,  4),
+            new BlockPos(4, -1,   4),
+            new BlockPos(4, -1,  -4)
     );
 
     ItemStackHandler inventory = new ItemStackHandler(1) {

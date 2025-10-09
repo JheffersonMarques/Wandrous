@@ -3,9 +3,9 @@ package com.hakimen.wandrous.client.entity;
 import com.hakimen.wandrous.Wandrous;
 import com.hakimen.wandrous.client.mover.IMoverRendererRegister;
 import com.hakimen.wandrous.client.utils.VertexProcessorBuilder;
+import com.hakimen.wandrous.common.api.mover.ISpellMover;
 import com.hakimen.wandrous.common.entity.projectiles.BlackHoleProjectile;
 import com.hakimen.wandrous.common.entity.projectiles.SpellCastingProjectile;
-import com.hakimen.wandrous.common.api.mover.ISpellMover;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -37,6 +37,9 @@ public class BlackHoleProjectileRenderer extends EntityRenderer<BlackHoleProject
         IMoverRendererRegister.render(movers, pEntity,pEntityYaw,pPartialTick,pPoseStack,pBuffer,pPackedLight);
         float scale = 1.25f;
         pPoseStack.pushPose();
+
+
+
         pPoseStack.scale(scale,scale,scale);
         pPoseStack.translate(0.0D, 0.25f, 0.0D);
         VertexConsumer vertexconsumer = pBuffer.getBuffer(RenderType.leash());

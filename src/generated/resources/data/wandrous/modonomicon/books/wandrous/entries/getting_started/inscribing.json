@@ -1,0 +1,127 @@
+{
+  "background_u_index": 0,
+  "background_v_index": 1,
+  "category": "getting_started",
+  "description": "book.wandrous.wandrous.getting_started.inscribing.description",
+  "hide_while_locked": false,
+  "icon": {
+    "item": "wandrous:arcane_inscriber"
+  },
+  "name": "book.wandrous.wandrous.getting_started.inscribing.name",
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "show_title_separator": true,
+      "text": "book.wandrous.wandrous.getting_started.inscribing.page0.text",
+      "title": "book.wandrous.wandrous.getting_started.inscribing.page0.title",
+      "use_markdown_in_title": false
+    },
+    {
+      "type": "modonomicon:empty",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      }
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "item": {
+        "count": 1,
+        "item": "wandrous:arcane_inscriber"
+      },
+      "text": "book.wandrous.wandrous.getting_started.inscribing.page1.text",
+      "title": "book.wandrous.wandrous.getting_started.inscribing.page1.title"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "recipe_id_1": "wandrous:arcane_inscriber",
+      "text": "book.wandrous.wandrous.getting_started.inscribing.page1_crafting.text",
+      "title1": "",
+      "title2": ""
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "item": {
+        "count": 1,
+        "item": "wandrous:arcane_inscriber"
+      },
+      "text": "book.wandrous.wandrous.getting_started.inscribing.page2.text",
+      "title": "book.wandrous.wandrous.getting_started.inscribing.page2.title"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "recipe_id_1": "wandrous:glyph_projector",
+      "text": "book.wandrous.wandrous.getting_started.inscribing.page2_crafting.text",
+      "title1": "",
+      "title2": ""
+    },
+    {
+      "type": "modonomicon:multiblock",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "multiblock_id": "tier_1_inscribing",
+      "multiblock_name": "",
+      "show_visualize_button": true,
+      "text": "book.wandrous.wandrous.getting_started.inscribing.page3.text"
+    },
+    {
+      "type": "modonomicon:multiblock",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "multiblock_id": "tier_2_inscribing",
+      "multiblock_name": "",
+      "show_visualize_button": true,
+      "text": "book.wandrous.wandrous.getting_started.inscribing.page4.text"
+    },
+    {
+      "type": "modonomicon:multiblock",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "multiblock_id": "tier_3_inscribing",
+      "multiblock_name": "",
+      "show_visualize_button": true,
+      "text": "book.wandrous.wandrous.getting_started.inscribing.page5.text"
+    },
+    {
+      "type": "modonomicon:multiblock",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "multiblock_id": "tier_4_inscribing",
+      "multiblock_name": "",
+      "show_visualize_button": true,
+      "text": "book.wandrous.wandrous.getting_started.inscribing.page6.text"
+    }
+  ],
+  "show_when_any_parent_unlocked": false,
+  "sort_number": 2,
+  "x": -4,
+  "y": 0
+}

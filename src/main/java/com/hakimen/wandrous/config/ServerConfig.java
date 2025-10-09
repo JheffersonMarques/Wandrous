@@ -28,6 +28,9 @@ public class ServerConfig {
     public static final ModConfigSpec.EnumValue<IFrameConfig> IFRAME_CONFIG = BUILDER.comment("How to apply the reduce iframe spell")
             .defineEnum("reduce_iframe_rule", IFrameConfig.ALL);
 
+    public static final ModConfigSpec.BooleanValue SHOULD_GIVE_GUIDE_BOOK = BUILDER.comment("Should the guide book be given on first spawn")
+            .define("should_give_guide_book", true);
+
     public static final ModConfigSpec SPEC = BUILDER.build();
 
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:guidance_lens"
+        "recipe": "wandrous:guidance_lens"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:guidance_lens"
+      "wandrous:guidance_lens"
     ]
   }
 }

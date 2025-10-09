@@ -6,6 +6,7 @@ import com.hakimen.wandrous.common.datagen.recipes.ArcaneInscriberRecipeBuilder;
 import com.hakimen.wandrous.common.item.InscribedLensItem;
 import com.hakimen.wandrous.common.registers.GlyphRegister;
 import com.hakimen.wandrous.common.registers.ItemRegister;
+import com.klikli_dev.modonomicon.registry.ItemRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -23,6 +24,8 @@ import net.neoforged.neoforge.common.Tags;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+import static com.klikli_dev.modonomicon.registry.DataComponentRegistry.BOOK_ID;
+
 public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
     public RecipeProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pRegistries) {
         super(pOutput, pRegistries);
@@ -32,9 +35,19 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
     protected void buildRecipes(RecipeOutput pRecipeOutput) {
         arcaneInscriberRecipes(pRecipeOutput);
         craftingTableRecipes(pRecipeOutput);
+
+        ItemStack stack = ItemRegistry.MODONOMICON.get().getDefaultInstance();
+        stack.set(BOOK_ID, ResourceLocation.fromNamespaceAndPath(Wandrous.MODID, "wandrous"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, stack)
+                .requires(Items.BOOK)
+                .requires(ItemRegister.TEALESTITE_SHARD.get())
+                .unlockedBy(getHasName(ItemRegister.TEALESTITE_SHARD.get()), has(ItemRegister.TEALESTITE_SHARD.get()))
+                .save(pRecipeOutput, ResourceLocation.fromNamespaceAndPath(Wandrous.MODID, "guide_book"));
     }
 
     public void craftingTableRecipes(RecipeOutput pRecipeOutput) {
+
         ItemStack stack = ItemRegister.INSCRIBED_LENS.get().getDefaultInstance();
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.BIND.get()))
@@ -45,7 +58,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.CHAIN)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "bind_lens");
+                .save(pRecipeOutput, location("bind_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.CONTROL.get()))
                 .pattern(" - ")
@@ -55,7 +68,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.AMETHYST_SHARD)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "control_lens");
+                .save(pRecipeOutput, location("control_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.DESTINY.get()))
                 .pattern(" - ")
@@ -65,7 +78,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.ENDER_EYE)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "destiny_lens");
+                .save(pRecipeOutput, location("destiny_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.FOCUS.get()))
                 .pattern(" - ")
@@ -76,7 +89,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.GLOWSTONE_DUST)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "focus_lens");
+                .save(pRecipeOutput, location("focus_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.GUIDANCE.get()))
                 .pattern(" - ")
@@ -86,7 +99,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.REDSTONE)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "guidance_lens");
+                .save(pRecipeOutput, location("guidance_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.KNOWLEDGE.get()))
                 .pattern(" - ")
@@ -96,7 +109,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.BOOK)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "knowledge_lens");
+                .save(pRecipeOutput, location("knowledge_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.MIND.get()))
                 .pattern(" - ")
@@ -106,7 +119,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.GOLD_NUGGET)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "mind_lens");
+                .save(pRecipeOutput, location("mind_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.NEW.get()))
                 .pattern(" - ")
@@ -116,7 +129,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.PAPER)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "new_lens");
+                .save(pRecipeOutput, location("new_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.POWER.get()))
                 .pattern(" - ")
@@ -126,7 +139,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.GUNPOWDER)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "power_lens");
+                .save(pRecipeOutput, location("power_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.TINKER.get()))
                 .pattern(" - ")
@@ -136,7 +149,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.REPEATER)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "tinker_lens");
+                .save(pRecipeOutput, location("tinker_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.VITALITY.get()))
                 .pattern(" - ")
@@ -146,7 +159,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.GOLDEN_CARROT)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "vitality_lens");
+                .save(pRecipeOutput, location("vitality_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, InscribedLensItem.makeGlyphStack(stack.copy(), GlyphRegister.WEAVE.get()))
                 .pattern(" - ")
@@ -156,7 +169,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Items.STRING)
                 .define('x', Tags.Items.GLASS_PANES)
                 .unlockedBy(getHasName(Items.GLASS_PANE), has(Tags.Items.GLASS_PANES))
-                .save(pRecipeOutput, "weave_lens");
+                .save(pRecipeOutput, location("weave_lens"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegister.ARCANE_INSCRIBER.get())
                 .pattern("+-+")
@@ -164,7 +177,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', ItemRegister.TEALESTITE_SHARD::get)
                 .define('+', Tags.Items.INGOTS_IRON)
                 .unlockedBy(getHasName(ItemRegister.TEALESTITE_SHARD.get()), has(ItemRegister.TEALESTITE_SHARD.get()))
-                .save(pRecipeOutput, "arcane_inscriber");
+                .save(pRecipeOutput, location("arcane_inscriber"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegister.GLYPH_PROJECTOR.get())
                 .pattern("+-+")
@@ -175,7 +188,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('-', Tags.Items.GLASS_PANES)
                 .define('+', Tags.Items.INGOTS_IRON)
                 .unlockedBy(getHasName(ItemRegister.TEALESTITE_SHARD.get()), has(ItemRegister.TEALESTITE_SHARD.get()))
-                .save(pRecipeOutput, "glyph_projector");
+                .save(pRecipeOutput, location("glyph_projector"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegister.TEALESTITE_RECHARGE_CRYSTAL.get())
                 .pattern(" + ")
@@ -184,7 +197,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('y', ItemRegister.TEALESTITE_SHARD::get)
                 .define('+', Tags.Items.NUGGETS_GOLD)
                 .unlockedBy(getHasName(ItemRegister.TEALESTITE_SHARD.get()), has(ItemRegister.TEALESTITE_SHARD.get()))
-                .save(pRecipeOutput, "recharge_crystal");
+                .save(pRecipeOutput, location("recharge_crystal"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegister.TEALESTITE_GREATER_RECHARGE_CRYSTAL.get())
                 .pattern("x+ ")
@@ -194,7 +207,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('x', ItemRegister.TEALESTITE_SHARD::get)
                 .define('+', Tags.Items.NUGGETS_GOLD)
                 .unlockedBy(getHasName(ItemRegister.TEALESTITE_SHARD.get()), has(ItemRegister.TEALESTITE_SHARD.get()))
-                .save(pRecipeOutput, "greater_recharge_crystal");
+                .save(pRecipeOutput, location("greater_recharge_crystal"));
 
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegister.ARCANE_DISPENSER.get())
@@ -206,7 +219,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
                 .define('|', ItemRegister.TEALESTITE_SHARD::get)
                 .define('+', Tags.Items.COBBLESTONES)
                 .unlockedBy(getHasName(ItemRegister.TEALESTITE_SHARD.get()), has(ItemRegister.TEALESTITE_SHARD.get()))
-                .save(pRecipeOutput, "arcane_dispenser");
+                .save(pRecipeOutput, location("arcane_dispenser"));
 
         //CHERT STUFF
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ItemRegister.MOSSY_CHERT_BRICKS.get())
@@ -1601,6 +1614,9 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider {
         modifiers(pRecipeOutput);
         movers(pRecipeOutput);
         raycasts(pRecipeOutput);
+
+
+
     }
 
 

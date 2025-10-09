@@ -29,7 +29,10 @@ public class WandrousClient {
     public static void clientInit(RegisterMenuScreensEvent event){
         event.register(ContainerRegister.WAND_TINKER_MENU.get(), WandTinkerScreen::new);
         event.register(ContainerRegister.ARCANE_DISPENSER.get(), ArcaneDispenserScreen::new);
+
     }
+
+
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
